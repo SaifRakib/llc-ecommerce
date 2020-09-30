@@ -26,6 +26,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function orders():\Illuminate\Database\Eloquent\Model\Relations\HasMany
+    {
+      return $this->hasMany(Order::class);
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
